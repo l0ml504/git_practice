@@ -6,18 +6,7 @@
             bvh
       </title>
       <style>
-.Radio {
-  display: inline-flex;
-  align-items: center;
-}
 
-.Radio--large {
-  font-size: 2em;
-}
-
-.Radio-Input {
-  margin: 0 0.5em 0;
-}
 input {
     vertical-align:middle;
 }
@@ -26,22 +15,20 @@ input {
 </head>
 
 <body>
+ <button onclick="f0()">walk</button>  
+<button onclick="f2()">walkb</button> 
+<button onclick="f3()">run</button> 
+<button onclick="f4()">walk</button> 
+<button onclick="f5()">walk</button> 
 
       <textarea id="text" rows="4" cols="50"></textarea>
-<form id="mainForm" name="mainForm">
-  <input type="radio" name="rads" value="1" title="walk"/>
-    <input type="radio" name="rads" value="2" title="run"/>
-    <input type="radio" name="rads" value="3" title="walkb"/>
-    <input type="radio" name="rads" value="4" title="fly"/>
-    <input type="radio" name="rads" value="5" title="clear"/>
-    <input type="radio" name="rads" value="6" />
 
-</form>
 
       <br />
       <input type="button" id="btn" value="Download" />
       <script>
 		var f=[];
+	let nombre="";
 		let filebvh=`HIERARCHY
 ROOT hip
 {
@@ -250,25 +237,34 @@ f[3]=`0.000000 42.532593 0.240040 67.327904 4.428230 2.041550 -0.272691 -0.17956
 0.000000 42.555489 0.240040 67.327904 4.428229 2.041549 0.368042 -0.371410 -0.160029 -16.184498 -3.614629 0.401002 0.000000 0.000000 0.000000 -11.828697 3.096339 -0.715548 -12.478098 -7.768959 0.883600 0.000000 0.000000 0.000000 1.931807 -5.678670 -0.070713 -51.348701 8.849910 -13.368311 -22.385967 -11.240754 -7.807345 5.969488 -0.173112 -23.824289 -2.021919 5.690309 -0.063351 55.253452 -14.115453 5.231470 23.424286 10.319860 -20.046398 -5.896825 0.211305 -16.827330 -7.847079 2.738688 -0.093837 23.292160 -1.599047 -1.349884 34.461617 2.584900 -1.722277 -5.232336 -7.045279 -0.602880 24.724331 -1.253251 1.171860 34.930672 -0.688688 1.995274 
 0.000000 42.532593 0.240040 67.327904 4.428230 2.041550 0.000000 0.000000 0.000000 -16.184500 -3.614630 0.401002 0.000000 0.000000 0.000000 -11.828700 3.096340 -0.715548 -12.478100 -7.768960 0.883600 0.000000 0.000000 0.000000 2.021920 -5.690310 -0.063351 -50.494598 9.922000 -13.641600 -22.515600 -9.303740 -7.852260 5.969490 -0.173112 -23.824301 -2.021920 5.690310 -0.063351 55.563702 -15.449700 4.860700 22.515600 9.303740 -19.852301 -5.969490 0.173112 -16.824301 -8.364620 3.738050 -0.091017 22.259800 -1.733060 -1.272750 33.888302 2.704900 -1.682210 -5.972420 -6.695630 -0.429375 23.932400 -0.849544 1.206410 34.619202 -0.948837 2.001770 
 `;
-document.mainForm.onclick = function(){
-    var radVal = document.forms.mainForm.rads.value;
-  switch(radVal){
-    case "1":
-      document.getElementById("text").value+=f[0];
-      break;
-    case "2":
-      document.getElementById("text").value+=f[1];
-      break;
-    case "3":
-      document.getElementById("text").value+=f[2];
-      break;
-    case "4":
-      document.getElementById("text").value+=f[3];
-      break;
-    case "5":
-      document.getElementById("text").value="";
-		break;
-	}
+
+function f0(){
+filebvh+=f[0];
+nombre+="_w";
+document.getElementById("text").value=nombre;
+}
+function f2(){
+nombre+='_wb';
+document.getElementById("text").value=nombre;
+filebvh+=f[1];
+}
+function f3(){
+nombre+='_r';
+document.getElementById("text").value=nombre;
+filebvh+=f[2];
+}
+function f4(){
+nombre+='_f';
+document.getElementById("text").value=nombre;
+filebvh+=f[3];
+}
+function f5(){
+nombre+=_w;
+document.getElementById("text").value=nombre;
+filebvh+=f[4];
+}
+function f1(){
+filebvh+=f[5];
 }
 
 //------------------https://www.base64converter.org/
@@ -283,8 +279,8 @@ document.mainForm.onclick = function(){
             }
             document.getElementById("btn")
                   .addEventListener("click", function () {
-                        var text =filebvh+= document.getElementById("text").value;
-                        var filename = "output.bvh";
+                        var text =filebvh;
+                        var filename = nombre+".bvh";
                         download(filename, text);
                   }, false);
 
