@@ -11,7 +11,11 @@
 </head>
 
 <body>
- <button onclick="f0()" class="button">tesy</button>  
+	<button onclick="f1(0.000010)" class="button">tes1</button>  
+	<button onclick="f1(0.000100)" class="button">tes2</button>  
+	<button onclick="f1(0.001000)" class="button">tes3</button>  
+	<button onclick="f1(0.010000)" class="button">tes4</button>  
+	<button onclick="f1(0.100000)" class="button">tes4</button>  
       <br />
       <input type="button" id="btn" value="Download" />
 <script>
@@ -20,8 +24,8 @@ var frnd2=0;
 var timestamp = Number(new Date());
 var f=[];
 var nombre="";
-var pos=0.000000;
-console.log(frnd);
+var pos=0;
+//console.log(frnd);
 function f0(){
 
 //document.getElementById("text").value=nombre;
@@ -32,6 +36,15 @@ for (var i = 0; i < frnd; i++) {
 		pos+=0.000100;
 	}
 }
+
+}
+function f1(vel){
+	frnd2=Math.floor(Math.random() * 311)+1;
+	for (var i0 = 0; i0 < frnd2; i0++) {
+		nombre+=pos.toFixed(6)+" 0.000000 0.000000 -0.000000 0.000000 -0.000000 \n";
+		pos+=vel;
+	}
+console.log(pos+":"+vel);
 
 }
 
@@ -63,7 +76,9 @@ Frame Time: 0.041667
 `;
 
                         let text =filebvh+nombre;
-                        var filename = "test"+timestamp+".bvh";
+                        var filename = "1bone"+timestamp+".bvh";
+						pos=0;
+						timestamp = Number(new Date());
                         download(filename, text);
                   }, false);
 //}
