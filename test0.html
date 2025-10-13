@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+      <title>
+            rot order:xzy,frametime:15fps,66.6670ms
+      </title>
+      <style>
+      </style>
+	  
+</head>
+
+<body>
+ <button onclick="f0()" class="button">tesy</button>  
+      <br />
+      <input type="button" id="btn" value="Download" />
+<script>
+var veces=Math.floor(Math.random() * 30);
+var frnd2=0;
+var timestamp = Number(new Date());
+var poses=[];
+poses[0]="0.000000 0.000000 0.000000 -0.000000 0.000000 -0.000000 -0.933010 0.000000 0.000000 -0.000000 0.000000 -0.000000 0.000000 1.056237 0.000000 -0.000000 0.000000 -0.000000 2.147683 -0.035208 0.000000 -0.000000 0.000000 -0.000000 1.091445 -2.147683 0.000000 -0.000000 0.000000 -0.000000 0.017604 -2.975069 0.000000 -0.000000 0.000000 -0.000000 -4.066514 -0.017604 0.000000 -0.000000 0.000000 -0.000000 -2.957465 2.957465 0.000000 -0.000000 0.000000 -0.000000 \n";
+poses[1]="-0.442300 -0.732765 0.000000 -0.000000 0.000000 -90.000003 -0.442299 0.200245 0.000000 -0.000000 0.000000 -90.000003 0.613938 -0.732765 0.000000 -0.000000 0.000000 -90.000003 -0.477508 -2.880447 0.000000 -0.000000 0.000000 -90.000003 -2.589982 -1.824210 0.000000 -0.000000 0.000000 -90.000003 -3.417368 -0.750368 0.000000 -0.000000 0.000000 -90.000003 -0.459903 3.333749 0.000000 -0.000000 0.000000 -90.000003 2.515166 2.224700 0.000000 -0.000000 0.000000 -90.000003 \n";
+poses[2]="-1.175064 -0.290465 0.000000 -0.000000 0.000000 -180.000005 -0.242054 -0.290465 0.000000 -0.000000 0.000000 -180.000005 -1.175064 -1.346703 0.000000 -0.000000 0.000000 -180.000005 -3.322747 -0.255257 0.000000 -0.000000 0.000000 -180.000005 -2.266509 1.857217 0.000000 -0.000000 0.000000 -180.000005 -1.192667 2.684603 0.000000 -0.000000 0.000000 -180.000005 2.891450 -0.272862 0.000000 -0.000000 0.000000 -180.000005 1.782401 -3.247931 0.000000 -0.000000 0.000000 -180.000005 \n";
+var nombre="";
+
+//console.log(frnd);
+
+function f0(){
+let t=0;
+//document.getElementById("text").value=nombre;
+for (var i = 0; i < veces; i++) {
+	frnd2=Math.floor(Math.random() * 55)+1;
+	var random = Math.floor(Math.random() * poses.length)
+	for (var i0 = 0; i0 < frnd2; i0++) {
+		nombre+=poses[random];
+	}
+}
+
+}
+
+//------------------https://www.base64converter.org/
+function download(filename, textInput) {
+
+                  var element = document.createElement('a');
+                  element.setAttribute('href','data:text/plain;charset=utf-8, ' + encodeURIComponent(textInput));
+                  element.setAttribute('download', filename);
+                  document.body.appendChild(element);
+                  element.click();
+                  //document.body.removeChild(element);
+            }
+            document.getElementById("btn")
+                  .addEventListener("click", function () {
+let filebvh=`HIERARCHY
+ROOT __0
+{
+	OFFSET 0.0 0.0 0.0
+	CHANNELS 0
+	JOINT Bone
+	{
+		OFFSET 0.000000 0.000000 0.000000
+		CHANNELS 6 Xposition Yposition Zposition Xrotation Yrotation Zrotation
+		End Site
+		{
+			OFFSET 0.000000 0.000000 1.000000
+		}
+	}
+	JOINT Bone.001
+	{
+		OFFSET -0.933010 0.000000 0.000000
+		CHANNELS 6 Xposition Yposition Zposition Xrotation Yrotation Zrotation
+		End Site
+		{
+			OFFSET 0.000000 0.000000 1.000000
+		}
+	}
+	JOINT Bone.002
+	{
+		OFFSET 0.000000 1.056237 0.000000
+		CHANNELS 6 Xposition Yposition Zposition Xrotation Yrotation Zrotation
+		End Site
+		{
+			OFFSET 0.000000 0.000000 1.000000
+		}
+	}
+	JOINT Bone.003
+	{
+		OFFSET 2.147683 -0.035208 0.000000
+		CHANNELS 6 Xposition Yposition Zposition Xrotation Yrotation Zrotation
+		End Site
+		{
+			OFFSET 0.000000 0.000000 1.000000
+		}
+	}
+	JOINT Bone.004
+	{
+		OFFSET 1.091445 -2.147683 0.000000
+		CHANNELS 6 Xposition Yposition Zposition Xrotation Yrotation Zrotation
+		End Site
+		{
+			OFFSET 0.000000 0.000000 1.000000
+		}
+	}
+	JOINT Bone.005
+	{
+		OFFSET 0.017604 -2.975069 0.000000
+		CHANNELS 6 Xposition Yposition Zposition Xrotation Yrotation Zrotation
+		End Site
+		{
+			OFFSET 0.000000 0.000000 1.000000
+		}
+	}
+	JOINT Bone.006
+	{
+		OFFSET -4.066514 -0.017604 0.000000
+		CHANNELS 6 Xposition Yposition Zposition Xrotation Yrotation Zrotation
+		End Site
+		{
+			OFFSET 0.000000 0.000000 1.000000
+		}
+	}
+	JOINT Bone.007
+	{
+		OFFSET -2.957465 2.957465 0.000000
+		CHANNELS 6 Xposition Yposition Zposition Xrotation Yrotation Zrotation
+		End Site
+		{
+			OFFSET 0.000000 0.000000 1.000000
+		}
+	}
+}
+MOTION
+Frames: ${veces}
+Frame Time: 0.041667
+`;
+
+                        let text =filebvh+nombre;
+                        var filename = "test"+timestamp+".bvh";
+                        download(filename, text);
+                  }, false);
+//}
+
+      </script>
+</body>
+
+</html>
