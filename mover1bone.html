@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+      <title>
+            rot order:xzy,frametime:15fps,66.6670ms
+      </title>
+      <style>
+      </style>
+	  
+</head>
+
+<body>
+	<button onclick="f1(0.000100)" class="button">walk</button>  
+	<button onclick="f1(0.060100)" class="button">run</button>  
+	<button onclick="f1(0.005000)" class="button">tesy</button>  
+	<button onclick="f1(0.700000)" class="button">tesy</button>  
+      <br />
+      <input type="button" id="btn" value="Download" />
+<script>
+var veces=Math.floor(Math.random() * 30);
+var frnd2=0;
+var timestamp = Number(new Date());
+var f=[];
+var nombre="";
+var cont=0;
+//console.log(frnd);
+function f0(vel){
+let pos=0;
+//document.getElementById("text").value=nombre;
+for (var i = 0; i < veces; i++) {
+	frnd2=Math.floor(Math.random() * 310);
+	for (var i0 = 0; i0 < frnd2; i0++) {
+		nombre+=pos.toFixed(6)+" 0.000000 0.000000 -0.000000 0.000000 -0.000000 \n";
+		pos+=vel;
+	}
+}
+}
+function f1(vel){
+let pos=0;
+	frnd2=Math.floor(Math.random() * (cont+100));
+	for (var i0 = cont; i0 < frnd2; i0++) {
+		nombre+=pos.toFixed(6)+" 0.000000 0.000000 -0.000000 0.000000 -0.000000 \n";
+		pos+=vel;
+		cont+=1;
+	}
+
+}
+
+//------------------https://www.base64converter.org/
+function download(filename, textInput) {
+
+                  var element = document.createElement('a');
+                  element.setAttribute('href','data:text/plain;charset=utf-8, ' + encodeURIComponent(textInput));
+                  element.setAttribute('download', filename);
+                  document.body.appendChild(element);
+                  element.click();
+                  //document.body.removeChild(element);
+            }
+            document.getElementById("btn")
+                  .addEventListener("click", function () {
+let filebvh=`HIERARCHY
+ROOT Bone
+{
+	OFFSET 0.000000 0.000000 0.000000
+	CHANNELS 6 Xposition Yposition Zposition Xrotation Yrotation Zrotation
+	End Site
+	{
+		OFFSET 0.000000 0.000000 1.000000
+	}
+}
+MOTION
+Frames: ${veces}
+Frame Time: 0.041667
+`;
+
+                        let text =filebvh+nombre;
+                        var filename = "test"+timestamp+".bvh";
+                        download(filename, text);
+                  }, false);
+//}
+
+      </script>
+</body>
+
+</html>

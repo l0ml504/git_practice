@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+      <title>
+            rot order:xzy,frametime:15fps,66.6670ms
+      </title>
+      <style>
+      </style>
+	  
+</head>
+
+<body>
+<button onclick="f1(0)" class="button">tesy</button>  
+<button onclick="f1(1)" class="button">tesy</button>  
+<button onclick="f1(2)" class="button">tesy</button>  
+      <br />
+      <input type="button" id="btn" value="Download" />
+<script>
+var veces=Math.floor(Math.random() * 30);
+var frnd2=0;
+var timestamp = Number(new Date());
+var poses=[];
+poses[0]="0.000000 0.000000 0.000000 -0.000000 0.000000 -0.000000 0.000000 -0.000001 4.520000 -0.000000 0.000000 -0.000000 -0.000000 -0.955902 16.975176 -0.000000 0.000000 -0.000000 0.000000 -0.000001 4.950001 -0.000000 0.000000 -0.000000 1.020000 -1.700002 14.770002 -0.000000 0.000000 -0.000000 5.824740 -0.000527 -0.097416 -0.307211 -0.267710 82.139124 12.229822 0.066197 -0.000359 -0.000000 -0.000000 0.000000 9.989855 0.054073 -0.000292 -0.000000 -0.000000 0.000000 -1.020000 -1.700002 14.770002 -0.000000 0.000000 -0.000000 -5.824741 -0.000527 -0.097415 0.307774 -0.272014 -82.941050 -12.229818 0.066197 -0.000357 0.000000 -0.000000 0.000000 -9.989857 0.054073 -0.000292 0.000000 -0.000000 -0.000000 3.390000 -0.000000 -0.000000 -0.000000 0.654822 -0.000000 -0.000000 0.000003 -16.610004 -0.000000 0.000000 0.000000 0.000000 0.000003 -16.510010 -0.000000 0.000000 -0.000000 -3.390000 -0.000000 -0.000000 -0.000000 0.654822 -0.000000 -0.000000 0.000003 -16.810003 -0.000000 0.000000 0.000000 0.000000 0.000003 -15.920000 0.000000 -0.000000 -0.000000 \n";
+poses[1]="0.000000 0.000000 0.000000 -0.000000 0.000000 -0.000000 0.000000 -0.000001 4.520000 -0.000000 0.000000 -0.000000 -0.000000 -0.955902 16.975176 -0.000000 0.000000 -0.000000 0.000000 -0.000001 4.950001 -0.000000 0.000000 -0.000000 1.020000 -1.700002 14.770002 -0.000000 0.000000 -0.000000 5.824740 -0.000527 -0.097415 -0.329130 21.029857 82.258666 12.229819 0.066197 -0.000359 125.980107 6.861783 -12.218026 9.989857 0.054072 -0.000292 -0.000000 -0.000001 0.000000 -1.020000 -1.700002 14.770002 -0.000000 0.000000 -0.000000 -5.824741 -0.000527 -0.097415 0.307774 -0.272014 -82.941050 -12.229818 0.066197 -0.000357 0.000000 -0.000000 0.000000 -9.989857 0.054073 -0.000292 0.000000 -0.000000 -0.000000 3.390000 -0.000000 -0.000000 -0.000000 0.654822 -0.000000 -0.000000 0.000003 -16.610004 -0.000000 0.000000 0.000000 0.000000 0.000003 -16.510010 -0.000000 0.000000 -0.000000 -3.390000 -0.000000 -0.000000 -0.000000 0.654822 -0.000000 -0.000000 0.000003 -16.810003 -0.000000 0.000000 0.000000 0.000000 0.000003 -15.920000 0.000000 -0.000000 -0.000000 \n";
+poses[2]="0.000000 0.000000 0.000000 -0.000000 0.000000 -0.000000 0.000000 -0.000001 4.520000 -0.000000 0.000000 -0.000000 -0.000000 -0.955902 16.975176 -0.000000 0.000000 -0.000000 0.000000 -0.000001 4.950001 -0.000000 0.000000 -0.000000 1.020000 -1.700002 14.770002 -0.000000 0.000000 -0.000000 5.824739 -0.000527 -0.097416 -0.307240 -0.832310 82.136098 12.229820 0.066195 -0.000359 84.795023 8.107081 -6.842649 9.989855 0.054074 -0.000292 -0.000000 -0.000000 0.000000 -1.020000 -1.700002 14.770002 -0.000000 0.000000 -0.000000 -5.824741 -0.000527 -0.097415 0.307774 -0.272014 -82.941050 -12.229818 0.066197 -0.000357 0.000000 -0.000000 0.000000 -9.989857 0.054073 -0.000292 0.000000 -0.000000 -0.000000 3.390000 -0.000000 -0.000000 -0.000000 0.654822 -0.000000 -0.000000 0.000003 -16.610004 -0.000000 0.000000 0.000000 0.000000 0.000003 -16.510010 -0.000000 0.000000 -0.000000 -3.390000 -0.000000 -0.000000 -0.000000 0.654822 -0.000000 -0.000000 0.000003 -16.810003 -0.000000 0.000000 0.000000 0.000000 0.000003 -15.920000 0.000000 -0.000000 -0.000000 \n";
+var nombre="";
+var countf=0;
+//console.log(frnd);
+
+function f0(){
+let t=0;
+//document.getElementById("text").value=nombre;
+for (var i = 0; i < veces; i++) {
+	frnd2=Math.floor(Math.random() * 55)+1;
+	var random = Math.floor(Math.random() * poses.length)
+	for (var i0 = 0; i0 < frnd2; i0++) {
+		nombre+=poses[random];
+		countf+=1;
+	}
+}
+
+}
+function f1(pose){
+let t=0;
+	frnd2=Math.floor(Math.random() * (countf+100))+1;
+	for (var i0 = 0; i0 < frnd2; i0++) {
+		nombre+=poses[pose];
+		countf+=1;
+	}
+}
+
+//------------------https://www.base64converter.org/
+function download(filename, textInput) {
+
+                  var element = document.createElement('a');
+                  element.setAttribute('href','data:text/plain;charset=utf-8, ' + encodeURIComponent(textInput));
+                  element.setAttribute('download', filename);
+                  document.body.appendChild(element);
+                  element.click();
+                  //document.body.removeChild(element);
+            }
+            document.getElementById("btn")
+                  .addEventListener("click", function () {
+let filebvh=`HIERARCHY
+ROOT Hips
+{
+	OFFSET 0.000000 0.000000 0.000000
+	CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+	JOINT Chest
+	{
+		OFFSET 0.000000 -0.000001 4.520000
+		CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+		JOINT Neck
+		{
+			OFFSET -0.000000 -0.955902 16.975174
+			CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+			JOINT Head
+			{
+				OFFSET 0.000000 -0.000001 4.949999
+				CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+				End Site
+				{
+					OFFSET 0.000000 -0.000001 4.019999
+				}
+			}
+		}
+		JOINT LeftCollar
+		{
+			OFFSET 1.020000 -1.700002 14.770000
+			CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+			JOINT LeftUpArm
+			{
+				OFFSET 5.824739 -0.000527 -0.097418
+				CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+				JOINT LeftLowArm
+				{
+					OFFSET 12.229818 0.066197 -0.000359
+					CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+					JOINT LeftHand
+					{
+						OFFSET 9.989855 0.054073 -0.000292
+						CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+						End Site
+						{
+							OFFSET 7.269897 0.039350 -0.000212
+						}
+					}
+				}
+			}
+		}
+		JOINT RightCollar
+		{
+			OFFSET -1.020000 -1.700002 14.770000
+			CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+			JOINT RightUpArm
+			{
+				OFFSET -5.824739 -0.000527 -0.097418
+				CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+				JOINT RightLowArm
+				{
+					OFFSET -12.229818 0.066197 -0.000359
+					CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+					JOINT RightHand
+					{
+						OFFSET -9.989855 0.054073 -0.000292
+						CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+						End Site
+						{
+							OFFSET -7.269897 0.039350 -0.000212
+						}
+					}
+				}
+			}
+		}
+	}
+	JOINT LeftUpLeg
+	{
+		OFFSET 3.390000 0.000000 0.000000
+		CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+		JOINT LeftLowLeg
+		{
+			OFFSET 0.000000 0.000003 -16.610001
+			CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+			JOINT LeftFoot
+			{
+				OFFSET 0.000000 0.000003 -16.510002
+				CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+				End Site
+				{
+					OFFSET 0.000000 0.000001 -3.480000
+				}
+			}
+		}
+	}
+	JOINT RightUpLeg
+	{
+		OFFSET -3.390000 0.000000 0.000000
+		CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+		JOINT RightLowLeg
+		{
+			OFFSET 0.000000 0.000003 -16.809999
+			CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+			JOINT RightFoot
+			{
+				OFFSET 0.000000 0.000003 -15.920000
+				CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+				End Site
+				{
+					OFFSET 0.000000 0.000001 -3.580002
+				}
+			}
+		}
+	}
+}
+MOTION
+Frames: ${countf}
+Frame Time: 0.041667
+`;
+
+                        let text =filebvh+nombre;
+                        var filename = "poses"+timestamp+".bvh";
+                        download(filename, text);
+                  }, false);
+//}
+
+      </script>
+</body>
+
+</html>
